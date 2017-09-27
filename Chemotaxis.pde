@@ -1,23 +1,37 @@
-Bacteria [] notbob;
+
+Bacteria [] colony;
+int i =0;
 void setup()
 {
+  
   size (500,500);
+  colony = new Bacteria[200];
+  for(int i =0; i< colony.length;i++)
+    {
+      colony[i] = new Bacteria();
+    }
 }
 void draw()
 { 
   background(0,0,255);
-  notbob = new Bacteria[100];
-notbob.show();
-notbob.walk();
+  for(int i =0; i<colony.length; i++)
+  {
+    colony[i].walk();
+colony[i].show();
+
 }
+}
+
+
 
 class Bacteria
 {
-  int myX, myY;
+  int myX, myY,mycolor;
   Bacteria()
   { 
-    myX= 250;
-    myY = 250;
+   myX = (int)(Math.random()*500);
+    myY = (int)(Math.random()*500);
+    mycolor = 255;
   }
   void walk()
   { myX = myX + (int)(Math.random()*3)-1;
@@ -25,7 +39,11 @@ class Bacteria
   }
    void show()
   { 
-    fill(255,255,0);
+    fill(mycolor,mycolor,mycolor);
     ellipse(myX, myY, 25,25);
   }
+
+  
+  
 }
+
