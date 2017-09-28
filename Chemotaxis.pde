@@ -1,6 +1,5 @@
-
 Bacteria [] colony;
-int i =0;
+i=0;
 void setup()
 {
   
@@ -21,16 +20,18 @@ colony[i].show();
 
 }
 }
-
-
+void mousePressed()
+{
+colony[i].follow();
+}
 
 class Bacteria
 {
   int myX, myY,mycolor;
   Bacteria()
   { 
-   myX = (int)(Math.random()*500);
-    myY = (int)(Math.random()*500);
+   myX = 250;
+    myY = 250;
     mycolor = 255;
   }
   void walk()
@@ -40,10 +41,13 @@ class Bacteria
    void show()
   { 
     fill(mycolor,mycolor,mycolor);
-    ellipse(myX, myY, 25,25);
+    ellipse(myX, myY, 15,15);
   }
+  void follow()
+  {
+    if 
+    myX = myX + 
 
-  
+
   
 }
-
